@@ -1,9 +1,9 @@
 # Gozio Physician Search API
 
 #### A candidate coding challenge:
-Gozio maintains a database of *physicians* for various healthcare clients. This project was created in order to surface physician data via a **Location Search API** intender for *internal use* by the Gozio team.
+Gozio maintains a database of *physicians* for various healthcare clients. This project was created in order to surface physician data via a **Location Search API** intended for *internal use* by the Gozio team.
 
-The current codebase is *poorly* written and with *minimum* effort as a proof of concept. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
+The current codebase is *poorly* written and with *dubious* resolve. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
 
 #### Expectation
 Spend roughly 1 - 2 hours examining and modifying the codebase in order to improve it's:
