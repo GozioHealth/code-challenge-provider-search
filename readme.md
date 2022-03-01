@@ -1,20 +1,33 @@
 # Gozio Physician Search API
 
 #### A candidate coding challenge:
-Gozio maintains a database of *physicians* for various healthcare clients. This project was created to surface physician data via a **Location Search API** which ultimately aims to be used both *internally* at Gozio as well as *externally* by clients.
+Gozio maintains a database of *physicians* for various healthcare clients. This project was created in order to surface physician data via a **Location Search API** intender for *internal use* by the Gozio team.
 
-The project is in it's infancy and currently for *internal use only*. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
+The current codebase is *poorly* written and with *minimum* effort as a proof of concept. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
+
+##### Expectation
+Spend roughly 1 - 2 hours examining and modifying the codebase in order to improve it's:
+* Match Accuracy
+* API Performance
+* Code Maintainability
+* Standards & Best Practices
+
+> **Note**: You do not need to achieve improvement on all of the above
+
 
 ##### Approach
+
 1. Ensure the API is implemented bug-free and in accordance to specification
 2. Make any changes you deem necessary to improve upon the codebase
-3. Enhance the API to allow **Search By Radius**
-4. Ensure all tests are passing
+4. Ensure adequate & passing test cases
 
 ##### Installation
-1. Checkout the repo: `hello world`
-2. `npm i`
-3. `npm test`
+1. Checkout the repo: `https://github.com/GozioHealth/code-challenge-provider-search`
+2. run `npm i`
+3. run `npm test`
+
+You should see something simliar to this output:
+![Jest Output](./test-output.png)
 
 ##### Location Search API
 The Location Search API should exist as a single endpoint `/search` that accepts *optional* parameters used as **Matching Criteria** against each physician:
@@ -78,6 +91,10 @@ Physicians may be associated with multiple *practices*; and each practice may ha
     }]
 }
 ```
+
+##### Extra Credit
+* Enhance the API to allow **Search By Radius** (see below)
+
 
 ##### Search By Radius
 Enhance the API to allow an additional *optional* parameter `radius`. When present, the API should:
