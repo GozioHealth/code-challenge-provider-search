@@ -1,16 +1,35 @@
+var FS = require('fs');
 var Hapi = require('@hapi/hapi');
 var MongoDB = require('mongodb');
+var MongoMemoryServer  = require('mongodb-memory-server');
 
 var started = false;
 var server = Hapi.server({ port: 8080 });
 
-module.exports = {
+ module.exports = {
+  /**
+   * start
+   *
+   * Will start the Hapi Server, configure routes, and optionally load in test data
+   *
+   * @param mongoClient
+   */
   start: async (mongoClient) => {
-    if (started) return;
-    started = true;
+    // If server already started; nothing to do
+    if (started) return; started = true;
 
+    // If we are running this from the command line then stage the in-memory database
+    if (require.main === module) {
+      var data = JSON.parse(FS.readFileSync('./test/db.json'));
+      var mongod = await MongoMemoryServer.MongoMemoryServer.create();
+      mongoClient = await MongoDB.MongoClient.connect(mongod.getUri());
+      await mongoClient.db('code-challenge').collection('physicians').insertMany(data);
+    }
+
+    // Configure mongoClient if not already defined
     mongoClient = mongoClient || await MongoDB.MongoClient.connect('mongodb://localhost:27017');
 
+    // Define our server routes
     server.route({
       path: '/search',
       method: 'get',
@@ -52,3 +71,10 @@ module.exports = {
     return server.start();
   },
 };
+
+/**
+ * Start the module when called from the command line
+ */
+if (require.main === module) {
+  module.exports.start();
+}

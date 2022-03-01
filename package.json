@@ -6,7 +6,8 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node src/app"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",

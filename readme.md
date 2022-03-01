@@ -28,7 +28,7 @@ Spend roughly 1 - 2 hours examining and modifying the codebase in order to impro
 
 You should see something simliar to the image below:
 
-![Jest Image](./jest.png)
+![Jest Output](./jest.png)
 
 #### Location Search API
 The Location Search API should exist as a single endpoint `/search` that accepts *optional* parameters used as **Matching Criteria** against each physician:
@@ -93,11 +93,7 @@ Physicians may be associated with multiple *practices*; and each practice may ha
 }
 ```
 
-#### Extra Credit
-* Enhance the API to allow **Search By Radius** (see below)
-
-
-#### Search By Radius
+#### Extra Credit (Search By Radius)
 Enhance the API to allow an additional *optional* parameter `radius`. When present, the API should:
 * Include any additional physician records within the given radius
 * Result should always return a list (unless no records found)
