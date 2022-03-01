@@ -27,7 +27,7 @@ Spend roughly 1 - 2 hours examining and modifying the codebase in order to impro
 3. run `npm test`
 
 You should see something simliar to this output:
-[Jest Image](./jest.png)
+![Jest Image](./jest.png)
 
 #### Location Search API
 The Location Search API should exist as a single endpoint `/search` that accepts *optional* parameters used as **Matching Criteria** against each physician:
