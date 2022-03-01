@@ -5,7 +5,7 @@ Gozio maintains a database of *physicians* for various healthcare clients. This 
 
 The current codebase is *poorly* written and with *minimum* effort as a proof of concept. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
 
-##### Expectation
+#### Expectation
 Spend roughly 1 - 2 hours examining and modifying the codebase in order to improve it's:
 * Match Accuracy
 * API Performance
@@ -15,21 +15,21 @@ Spend roughly 1 - 2 hours examining and modifying the codebase in order to impro
 > **Note**: You do not need to achieve improvement on all of the above
 
 
-##### Approach
+#### Approach
 
 1. Ensure the API is implemented bug-free and in accordance to specification
 2. Make any changes you deem necessary to improve upon the codebase
 4. Ensure adequate & passing test cases
 
-##### Installation
+#### Installation
 1. Checkout the repo: `https://github.com/GozioHealth/code-challenge-provider-search`
 2. run `npm i`
 3. run `npm test`
 
 You should see something simliar to this output:
-![Jest Output](./test-output.png)
+![Jest Output](test-output.png)
 
-##### Location Search API
+#### Location Search API
 The Location Search API should exist as a single endpoint `/search` that accepts *optional* parameters used as **Matching Criteria** against each physician:
 
 Optional API Parameters:
@@ -60,14 +60,14 @@ Example Output (multiple records):
 ]
 ```
 
-##### Matching Criteria
+#### Matching Criteria
 The following rules should be applied to determine a physician match:
 1. Match by *id*; if found return a single record
 2. Match by *latitude* & *longitude*; if found, add to list of records returned
 3. Match by *streetName* & *streetNumber* & *city* & *state* & *zip*. If found, add to list of records returned
 4. If no results found, return appropriate status code
 
-##### Physician Data
+#### Physician Data
 Physicians may be associated with multiple *practices*; and each practice may have more than one *location*. This relationship is stored within a single mongodb collection named `physician` with the following document stucture:
 
 ```
@@ -92,11 +92,11 @@ Physicians may be associated with multiple *practices*; and each practice may ha
 }
 ```
 
-##### Extra Credit
+#### Extra Credit
 * Enhance the API to allow **Search By Radius** (see below)
 
 
-##### Search By Radius
+#### Search By Radius
 Enhance the API to allow an additional *optional* parameter `radius`. When present, the API should:
 * Include any additional physician records within the given radius
 * Result should always return a list (unless no records found)
