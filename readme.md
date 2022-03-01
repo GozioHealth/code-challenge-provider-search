@@ -26,7 +26,8 @@ Spend roughly 1 - 2 hours examining and modifying the codebase in order to impro
 2. run `npm i`
 3. run `npm test`
 
-You should see something simliar to this output:
+You should see something simliar to the image below:
+
 ![Jest Image](./jest.png)
 
 #### Location Search API
