@@ -1,0 +1,20 @@
+{
+  "author": "",
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "description": "Gozio candidate code challenge",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "mongodb": "^4.4.0"
+  },
+  "devDependencies": {
+    "axios": "^0.26.0",
+    "jest": "^27.5.1",
+    "mongodb-memory-server": "^8.4.0"
+  }
+}
