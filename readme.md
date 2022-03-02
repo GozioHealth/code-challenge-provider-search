@@ -3,30 +3,30 @@
 #### A candidate coding challenge:
 Gozio maintains a database of *physicians* for various healthcare clients. This project was created in order to surface physician data via a **Location Search API** intended for *internal use* by the Gozio team.
 
-The current codebase is *poorly* written and with *dubious* resolve. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
+The current codebase is intentionally *poorly* written and with *dubious* resolve. The goal of this exercise is to assume ownership of the project, voice any questions or concerns you may have, and help ensure it's success moving forward.
 
 #### Expectation
-Spend roughly 1 - 2 hours examining and modifying the codebase in order to improve it's:
-* Match Accuracy
+Spend roughly 1 - 2 hours examining and modifying the codebase in order to improve its:
+* Physician Search Match Accuracy
 * API Performance
 * Code Maintainability
 * Standards & Best Practices
 
-> **Note**: You do not need to achieve improvement on all of the above
-
+> **Note**: You do not need to achieve improvement on all of the above. The minimum expectation is to ensure the tests are passing.
 
 #### Approach
-
 1. Ensure the API is implemented bug-free and in accordance to specification
 2. Make any changes you deem necessary to improve upon the codebase
 4. Ensure adequate & passing test cases
 
 #### Installation
-1. Checkout the repo: `https://github.com/GozioHealth/code-challenge-provider-search`
-2. run `npm i`
-3. run `npm test`
+1. Use npm to install the package dependencies.
+2. The project makes use of and installs in-memory Mongodb, so this should be sufficient for the db connection.
 
-You should see something simliar to the image below:
+#### Testing
+1. Run `npm test`
+
+You should see something similiar to the image below:
 
 ![Jest Output](./jest.png)
 
@@ -63,10 +63,10 @@ Example Output (multiple records):
 
 #### Matching Criteria
 The following rules should be applied to determine a physician match:
-1. Match by *id*; if found return a single record
-2. Match by *latitude* & *longitude*; if found, add to list of records returned
-3. Match by *streetName* & *streetNumber* & *city* & *state* & *zip*. If found, add to list of records returned
-4. If no results found, return appropriate status code
+1. Match by *id*; if found return a single record.
+2. Match by *latitude* & *longitude*; if found, add to list of records returned.
+3. Match by *streetName* & *streetNumber* & *city* & *state* & *zip*. If found, add to list of records returned.
+4. If no results found, return appropriate status code.
 
 #### Physician Data
 Physicians may be associated with multiple *practices*; and each practice may have more than one *location*. This relationship is stored within a single mongodb collection named `physician` with the following document stucture:
