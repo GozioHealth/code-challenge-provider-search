@@ -26,7 +26,7 @@ Spend roughly 1 - 2 hours examining and modifying the codebase in order to impro
 #### Testing
 1. Run `npm test`
 
-You should see something similiar to the image below:
+You should see something similar to the image below:
 
 ![Jest Output](./jest.png)
 
